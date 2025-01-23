@@ -86,6 +86,36 @@ function Dashboard() {
           )}
         </div>
       </div>
+
+
+// is Completed logic 
+// 
+// <div className="flex items-center">
+//   {item?.cancelled ? (
+//     <p className="text-red-500 text-sm font-medium">Cancelled</p>
+//   ) : item?.isCompleted ? (
+//     <div className="flex items-center">
+//       <img
+//         className="h-4 w-4 mr-2"
+//         src="https://cdn-icons-png.flaticon.com/512/845/845646.png"
+//         alt="Completed Icon"
+//       />
+//       <p className="text-blue-500 text-sm font-medium">Completed</p>
+//     </div>
+//   ) : (
+//     <div className="flex items-center">
+//       <img
+//         className="h-4 w-4 mr-2"
+//         src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
+//         alt="Checked Icon"
+//       />
+//       <p className="text-green-500 text-sm font-medium">Confirmed</p>
+//     </div>
+//   )}
+// </div>
+
+
+
     ))
   ) : (
     <p className="text-center text-gray-500">No recent appointments available.</p>

@@ -12,7 +12,7 @@ const DoctorContextProvider = (props) => {
 
     const [dashData,setDashData]=useState(false)
 
-    const{profileData,setProfileData}=useState(false)
+    const[profileData,setProfileData]=useState(false)
 
 
     // Fetch appointments
@@ -105,19 +105,24 @@ const DoctorContextProvider = (props) => {
       
     
 
-      const getProfileData=async()=>{
+      const getProfileData = async () => {
         try {
-            const {data}=await axios.get(backendUrl + '/api/doctor/profile',{headers:{dToken}})
-            if(data.success){
-                setProfileData(data.profileData)
-                console.log(data.profileData)
-            }
+          const { data } = await axios.get(backendUrl + '/api/doctor/profile', {
+            headers: { dToken },
+          });
+          console.log("Profile data response:", data);  // Log the full response
+          if (data.success) {
+            setProfileData(data.profileData);
+            console.log(data.profileData);
+          } else {
+            toast.error('Failed to fetch profile data');
+          }
         } catch (error) {
-            console.log(error);
-            toast.error(error.message);  // Fixed the typo here
+          console.log(error);
+          toast.error(error.message); // Fixed the typo here
         }
-      }
-
+      };
+      
     
 
     // Context value to be provided
@@ -126,7 +131,9 @@ const DoctorContextProvider = (props) => {
         backendUrl, appointments, setAppointments,
         getAppointments, logoutDoctor,
         completeAppointment,cancelAppointment,
-        dashData,setDashData,getDashData
+        dashData,setDashData,getDashData,
+        profileData,setProfileData,
+        getProfileData
     };
 
     return (

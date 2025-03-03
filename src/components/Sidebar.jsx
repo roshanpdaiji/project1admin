@@ -27,7 +27,7 @@ function Sidebar() {
               src="https://www.pngkey.com/png/full/432-4323239_confeti-y-serpentinas-png.png"
               alt="Dashboard"
             />
-            <p className="text-base font-medium hidden">Dashboard</p>
+            <p className="text-base font-medium">Dashboard</p>
           </NavLink>
 
           {/* Appointments */}
@@ -142,12 +142,6 @@ function Sidebar() {
           </NavLink>
         </ul>
       )}
-
-
-
-
-
-
 
 
 
